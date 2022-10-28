@@ -1,2 +1,2 @@
 # Calculator
-Just a simple calculator application using html, css, and javascript.
+Just a simple calculator application built by using html, css, and javascript.
