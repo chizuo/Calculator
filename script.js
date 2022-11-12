@@ -175,13 +175,13 @@ function parse(statement) {
     const expression = [];
     let term = "";
     for(let i = 0; i < statement.length; i++) {
-        if(isNaN(statement.charAt(i))) { 
-            expression.push(Number.parseInt(term));
+        if(isNaN(statement.charAt(i)) && statement.charAt(i) !== ".") { 
+            expression.push(Number.parseFloat(term));
             expression.push(statement.charAt(i));
             term = "";
         } else { term = term + statement.charAt(i); }
     }
-    if(term.length > 0) { expression.push(Number.parseInt(term)); }
+    if(term.length > 0) { expression.push(Number.parseFloat(term)); }
     return expression;
 }
 
