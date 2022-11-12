@@ -175,7 +175,11 @@ function parse(statement) {
     const expression = [];
     let term = "";
     for(let i = 0; i < statement.length; i++) {
-        if(isNaN(statement.charAt(i)) && statement.charAt(i) !== ".") { 
+        /*  if the character isn't a number and
+            not a decimal point and 
+            not the first character (to include negative values)
+            then build the term (which is the number) */
+        if(isNaN(statement.charAt(i)) && statement.charAt(i) !== "." && i !== 0) { 
             expression.push(Number.parseFloat(term));
             expression.push(statement.charAt(i));
             term = "";
