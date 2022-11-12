@@ -24,7 +24,6 @@ function backButton() {
 function oneButton() {
     let content = document.getElementById("content");
     let contents = content.innerHTML;
-    adjustScreen(contents.length)
     input = input + "1";
     content.innerHTML = formatOutput(parse(input));
 }
@@ -32,7 +31,6 @@ function oneButton() {
 function twoButton() {
     let content = document.getElementById("content");
     let contents = content.innerHTML;
-    adjustScreen(contents.length)
     input = input + "2";
     content.innerHTML = formatOutput(parse(input));
 }
@@ -40,7 +38,6 @@ function twoButton() {
 function threeButton() {
     let content = document.getElementById("content");
     let contents = content.innerHTML;
-    adjustScreen(contents.length)
     input = input + "3";
     content.innerHTML = formatOutput(parse(input));
 }
@@ -48,7 +45,6 @@ function threeButton() {
 function fourButton() {
     let content = document.getElementById("content");
     let contents = content.innerHTML;
-    adjustScreen(contents.length)
     input = input + "4";
     content.innerHTML = formatOutput(parse(input));
 }
@@ -56,7 +52,6 @@ function fourButton() {
 function fiveButton() {
     let content = document.getElementById("content");
     let contents = content.innerHTML;
-    adjustScreen(contents.length)
     input = input + "5";
     content.innerHTML = formatOutput(parse(input));
 }
@@ -64,7 +59,6 @@ function fiveButton() {
 function sixButton() {
     let content = document.getElementById("content");
     let contents = content.innerHTML;
-    adjustScreen(contents.length)
     input = input + "6";
     content.innerHTML = formatOutput(parse(input));
 }
@@ -72,7 +66,6 @@ function sixButton() {
 function sevenButton() {
     let content = document.getElementById("content");
     let contents = content.innerHTML;
-    adjustScreen(contents.length)
     input = input + "7";
     content.innerHTML = formatOutput(parse(input));
 }
@@ -80,7 +73,6 @@ function sevenButton() {
 function eightButton() {
     let content = document.getElementById("content");
     let contents = content.innerHTML;
-    adjustScreen(contents.length)
     input = input + "8";
     content.innerHTML = formatOutput(parse(input));
 }
@@ -88,7 +80,6 @@ function eightButton() {
 function nineButton() {
     let content = document.getElementById("content");
     let contents = content.innerHTML;
-    adjustScreen(contents.length)
     input = input + "9";
     content.innerHTML = formatOutput(parse(input));
 }
@@ -96,7 +87,6 @@ function nineButton() {
 function zeroButton() {
     let content = document.getElementById("content");
     let contents = content.innerHTML;
-    adjustScreen(contents.length)
     input = input + "0";
     content.innerHTML = formatOutput(parse(input));
 }
@@ -164,6 +154,7 @@ function equals() {
     let results = evaluate(expression);
     prevState = `${results}`;
     input = `${results}`;
+    adjustScreen(input.length);
     document.getElementById("content").innerHTML = `${results}`;
 }
 
@@ -195,6 +186,7 @@ function formatOutput(expression) {
         let term = isNaN(expression[i]) ? operationalMapper.get(expression[i]) : `${expression[i]}`;
         statement = statement + term;
     }
+    adjustScreen(statement.length);
     return statement;
 }
 
