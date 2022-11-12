@@ -220,7 +220,7 @@ function keyboard(key) {
     var content = document.getElementById("content");
     var contents = content.innerHTML;
 
-    if(isNaN(key)) { /* the key pressed must've been +,-,/,*,=, or Enter */
+    if(isNaN(key)) { /* the key pressed must've been +,-,/,*,=, Enter, or Backspace */
         if(specialChars.has(key)) { 
             if(key === "Enter" || key === "=") { equals(); }
             else if(key === "Backspace") { backButton(); }
