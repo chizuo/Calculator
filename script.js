@@ -3,7 +3,6 @@ const prefSize = "250%";
 const smallerSize = "200%";
 var input = "";
 var prevState = "";
-//var num = "";
 const operationalMapper = new Map([["-","&minus;"],["/","&divide;"],["+","&plus;"],["*","&times;"]]);
 const specialChars = new Set(["*","/","-","+","=","Enter","Backspace"]);
 
@@ -161,12 +160,11 @@ function equals() {
     /* If the last character in the input is an operator, do not evaluate */
     if(specialChars.has(input.charAt(input.length - 1))) { alert("invalid mathematical expression"); return; }
     
-    let expression = parse(input);
-    
-    let equals = evaluate(expression);
-    prevState = equals;
-    input = equals;
-    document.getElementById("content").innerHTML = equals;
+    let expression = parse(input);   
+    let results = evaluate(expression);
+    prevState = `${results}`;
+    input = `${results}`;
+    document.getElementById("content").innerHTML = `${results}`;
 }
 
 function adjustScreen(length) {
