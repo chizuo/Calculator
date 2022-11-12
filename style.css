@@ -18,17 +18,6 @@ body {
     grid-template-areas:
         "screen"
         "buttons"
-    /*
-    grid-template-columns: repeat(4, [col] 98.5px);
-    grid-template-rows: repeat(6, [row] 98.5px);
-    grid-template-areas:
-        "screen screen screen screen"
-        "clear clear back divide"
-        "seven eight nine multiply"
-        "four five six minus"
-        "one two three plus"
-        "zero zero zero equals"
-    */
 }
 
 .calculator-screen {
