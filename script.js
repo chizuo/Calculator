@@ -23,70 +23,61 @@ function backButton() {
 
 function oneButton() {
     let content = document.getElementById("content");
-    let contents = content.innerHTML;
     input = input + "1";
     content.innerHTML = formatOutput(parse(input));
 }
 
 function twoButton() {
     let content = document.getElementById("content");
-    let contents = content.innerHTML;
     input = input + "2";
     content.innerHTML = formatOutput(parse(input));
 }
 
 function threeButton() {
     let content = document.getElementById("content");
-    let contents = content.innerHTML;
     input = input + "3";
     content.innerHTML = formatOutput(parse(input));
 }
 
 function fourButton() {
     let content = document.getElementById("content");
-    let contents = content.innerHTML;
     input = input + "4";
     content.innerHTML = formatOutput(parse(input));
 }
 
 function fiveButton() {
     let content = document.getElementById("content");
-    let contents = content.innerHTML;
     input = input + "5";
     content.innerHTML = formatOutput(parse(input));
 }
 
 function sixButton() {
     let content = document.getElementById("content");
-    let contents = content.innerHTML;
     input = input + "6";
     content.innerHTML = formatOutput(parse(input));
 }
 
 function sevenButton() {
     let content = document.getElementById("content");
-    let contents = content.innerHTML;
     input = input + "7";
     content.innerHTML = formatOutput(parse(input));
 }
 
 function eightButton() {
     let content = document.getElementById("content");
-    let contents = content.innerHTML;
     input = input + "8";
     content.innerHTML = formatOutput(parse(input));
 }
 
 function nineButton() {
     let content = document.getElementById("content");
-    let contents = content.innerHTML;
+
     input = input + "9";
     content.innerHTML = formatOutput(parse(input));
 }
 
 function zeroButton() {
     let content = document.getElementById("content");
-    let contents = content.innerHTML;
     input = input + "0";
     content.innerHTML = formatOutput(parse(input));
 }
