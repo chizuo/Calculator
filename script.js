@@ -13,12 +13,8 @@ function clearScreen() {
 }
 
 function backButton() {
-    let content = document.getElementById("content");
-    let contents = content.innerHTML;
     input = input.slice(0, input.length - 1);
-    contents = contents.slice(0, contents.length - 1);
-    adjustScreen(contents.length);
-    content.innerHTML = contents.length > 0 ? contents : "";
+    document.getElementById("content").innerHTML = input.length > 0 ? formatOutput(parse(input)) : "";
 }
 
 function numpad(number) {
