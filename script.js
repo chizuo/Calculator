@@ -144,7 +144,6 @@ function keyboard(key) {
         } else { alert(`${key} is not a valid calculator button`); }
     } else { /* the key pressed was a number */
         input = input + key;
-        adjustScreen(input.length);
         content.innerHTML = formatOutput(parse(input));
     }
 }
