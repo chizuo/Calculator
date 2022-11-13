@@ -13,76 +13,16 @@ function clearScreen() {
 }
 
 function backButton() {
-    let content = document.getElementById("content");
-    let contents = content.innerHTML;
     input = input.slice(0, input.length - 1);
-    contents = contents.slice(0, contents.length - 1);
-    adjustScreen(contents.length);
-    content.innerHTML = contents.length > 0 ? contents : "";
+    document.getElementById("content").innerHTML = input.length > 0 ? formatOutput(parse(input)) : "";
 }
 
-function oneButton() {
-    let content = document.getElementById("content");
-    input = input + "1";
-    content.innerHTML = formatOutput(parse(input));
+function numpad(number) {
+    input = input + number;
+    document.getElementById("content").innerHTML = formatOutput(parse(input));
 }
 
-function twoButton() {
-    let content = document.getElementById("content");
-    input = input + "2";
-    content.innerHTML = formatOutput(parse(input));
-}
-
-function threeButton() {
-    let content = document.getElementById("content");
-    input = input + "3";
-    content.innerHTML = formatOutput(parse(input));
-}
-
-function fourButton() {
-    let content = document.getElementById("content");
-    input = input + "4";
-    content.innerHTML = formatOutput(parse(input));
-}
-
-function fiveButton() {
-    let content = document.getElementById("content");
-    input = input + "5";
-    content.innerHTML = formatOutput(parse(input));
-}
-
-function sixButton() {
-    let content = document.getElementById("content");
-    input = input + "6";
-    content.innerHTML = formatOutput(parse(input));
-}
-
-function sevenButton() {
-    let content = document.getElementById("content");
-    input = input + "7";
-    content.innerHTML = formatOutput(parse(input));
-}
-
-function eightButton() {
-    let content = document.getElementById("content");
-    input = input + "8";
-    content.innerHTML = formatOutput(parse(input));
-}
-
-function nineButton() {
-    let content = document.getElementById("content");
-
-    input = input + "9";
-    content.innerHTML = formatOutput(parse(input));
-}
-
-function zeroButton() {
-    let content = document.getElementById("content");
-    input = input + "0";
-    content.innerHTML = formatOutput(parse(input));
-}
-
-function multiplyButton() {
+function operator(operator) {
     let content = document.getElementById("content");
     let contents = content.innerHTML;
     if(contents.length === 0) return;
@@ -91,46 +31,7 @@ function multiplyButton() {
         input = input.substring(0, input.length-1);
     } 
     prevState = contents;
-    input = input + "*";
-    content.innerHTML = formatOutput(parse(input));
-}
-
-function divideButton() {
-    let content = document.getElementById("content");
-    let contents = content.innerHTML;
-    if(contents.length === 0) return;
-    if(input.length > 0 && specialChars.has(input.charAt(input.length - 1))) {
-        contents = prevState;
-        input = input.substring(0, input.length-1);
-    } 
-    prevState = contents;
-    input = input + "/";
-    content.innerHTML = formatOutput(parse(input));
-}
-
-function plusButton() {
-    let content = document.getElementById("content");
-    let contents = content.innerHTML;
-    if(contents.length === 0) return;
-    if(input.length > 0 && specialChars.has(input.charAt(input.length - 1))) {
-        contents = prevState;
-        input = input.substring(0, input.length-1);
-    } 
-    prevState = contents;
-    input = input + "+";
-    content.innerHTML = formatOutput(parse(input));
-}
-
-function minusButton() {
-    let content = document.getElementById("content");
-    let contents = content.innerHTML;
-    if(contents.length === 0) return;
-    if(input.length > 0 && specialChars.has(input.charAt(input.length - 1))) {
-        contents = prevState;
-        input = input.substring(0, input.length-1);
-    } 
-    prevState = contents;
-    input = input + "-";
+    input = input + operator;
     content.innerHTML = formatOutput(parse(input));
 }
 
@@ -239,7 +140,6 @@ function keyboard(key) {
         } else { alert(`${key} is not a valid calculator button`); }
     } else { /* the key pressed was a number */
         input = input + key;
-        adjustScreen(input.length);
         content.innerHTML = formatOutput(parse(input));
     }
 }
@@ -248,21 +148,21 @@ function start() {
     document.getElementById("clear").addEventListener("click", clearScreen, false);
     document.getElementById("back").addEventListener("click", backButton, false);
     document.getElementById("equals").addEventListener("click", equals, false);
-    document.getElementById("one").addEventListener("click", oneButton, false);
-    document.getElementById("two").addEventListener("click", twoButton, false);
-    document.getElementById("three").addEventListener("click", threeButton, false);
-    document.getElementById("four").addEventListener("click", fourButton, false);
-    document.getElementById("five").addEventListener("click", fiveButton, false);
-    document.getElementById("six").addEventListener("click", sixButton, false);
-    document.getElementById("seven").addEventListener("click", sevenButton, false);
-    document.getElementById("eight").addEventListener("click", eightButton, false);
-    document.getElementById("nine").addEventListener("click", nineButton, false);
-    document.getElementById("zero").addEventListener("click", zeroButton, false);
-    document.getElementById("multiply").addEventListener("click", multiplyButton, false);
-    document.getElementById("divide").addEventListener("click", divideButton, false);
-    document.getElementById("plus").addEventListener("click", plusButton, false);
-    document.getElementById("minus").addEventListener("click", minusButton, false);
-    window.addEventListener("keydown", function (e) { keyboard(e.key); }, false);
+    document.getElementById("one").addEventListener("click", () => { numpad("1"); }, false);
+    document.getElementById("two").addEventListener("click", () => { numpad("2"); }, false);
+    document.getElementById("three").addEventListener("click", () => { numpad("3"); }, false);
+    document.getElementById("four").addEventListener("click", () => { numpad("4"); }, false);
+    document.getElementById("five").addEventListener("click", () => { numpad("5"); }, false);
+    document.getElementById("six").addEventListener("click", () => { numpad("6"); }, false);
+    document.getElementById("seven").addEventListener("click", () => { numpad("7"); }, false);
+    document.getElementById("eight").addEventListener("click", () => { numpad("8"); }, false);
+    document.getElementById("nine").addEventListener("click", () => { numpad("9"); }, false);
+    document.getElementById("zero").addEventListener("click", () => { numpad("0"); }, false);
+    document.getElementById("multiply").addEventListener("click", () => { operator("*"); }, false);
+    document.getElementById("divide").addEventListener("click", () => { operator("/"); }, false);
+    document.getElementById("plus").addEventListener("click", () => { operator("+"); }, false);
+    document.getElementById("minus").addEventListener("click", () => { operator("-"); }, false);
+    window.addEventListener("keydown", e => { keyboard(e.key); }, false);
 }
 
 window.addEventListener("load", start, false);
