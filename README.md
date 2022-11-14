@@ -12,9 +12,9 @@ The operator, equals, and parse function in orchestration acts as the syntax ana
 
 `keyboard(key)` parses the keystrokes entered by the user and builds the mathematical expression if the keys are equivalent buttons shown in the GUI. If not, an alert is provided to explain the error.
 
-`formatOutput(expression)` takes the mathematical expression and turns it to a string for the calculator display. This was my solution to address leading zeroes to a number. I'm currently working on a better method to deal with this approach since displaying the mathematical expression is cost O(n) to accomplish.
+`formatOutput(expression)` takes the mathematical expression and turns it to a string for the calculator display. This was my solution to address leading zeroes to a number. I'm currently working on a better method to deal with this approach since displaying the mathematical expression is at a cost of O(n) to accomplish.
 
-`adjustScreen(length)` adjusts the text size for the calculator display based on the length of the expression on screen.
+`adjustScreen(length)` adjusts the text size for the calculator display based on the length of the expression on screen by changing the CSS properties tied to the screen.
 
 `equals()` is a function that acts as part of the group evaluating the mathematical expression's syntax. If the expression isn't empty or invalid, then it will run `parse()` to run the other portion of the syntax analysis.
 
