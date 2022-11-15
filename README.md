@@ -1,5 +1,5 @@
 # Calculator
-Just a simple calculator application built by using html, css, and vanilla javascript.
+Just a simple calculator application built on html, css, and vanilla javascript.
 The calculator is great example of grammar analysis, syntax analysis, and semantic analysis.
 
 ## Description
