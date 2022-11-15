@@ -1,6 +1,6 @@
 # Calculator
 Just a simple calculator application built on html, css, and vanilla javascript.
-The calculator is great example of grammar analysis, syntax analysis, and semantic analysis.
+The calculator is great example of grammar analysis, syntax analysis, and semantic analysis. 
 
 ## Description
 This is currently v2 of the calculator. This version of the calculator currently evaluates a mathematical expression greater than 2 numbers and 1 operator.
