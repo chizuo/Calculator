@@ -83,8 +83,8 @@ function formatOutput(expression) {
 }
 
 function evaluate(expression) { /* Using a binary approach to recursive descent parsing  */
-    if(expression.length === 1) { return expression.shift(); }
-    let number = expression.shift();
+    if(expression.length === 1) { return expression.shift(); } // if the list of expressions is length 1, return that number
+    let number = expression.shift(); 
     let operator = expression.shift();
     
     /* stay in current stack level and multiply or divide */
@@ -95,7 +95,8 @@ function evaluate(expression) { /* Using a binary approach to recursive descent 
     } 
 
     /* recursively descend when add or substract then return the sum or difference */
-    return operator === "+" ? number + evaluate(expression) : number - evaluate(expression);
+    if(operator === "-") { expression[0] *= -1; } // converts the next number to be evaluated to a negative     
+    return number + evaluate(expression);
 }
 
 function keyboard(key) {
